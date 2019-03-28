@@ -1,9 +1,10 @@
-package com.example.bmi
+package com.example.bmi.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import com.example.bmi.R
 import com.example.bmi.logic.BMIResult.Companion.bmiResult
 import kotlinx.android.synthetic.main.activity_bmi_norm_info.*
 
@@ -14,8 +15,8 @@ class BmiNormInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_bmi_norm_info)
         setSupportActionBar(norm_info_toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val bmi = intent.getDoubleExtra(getString(R.string.main_intent_name_bmi), 0.0)
-        displayInfo(bmi)
+        val bmi = intent.getDoubleExtra(MainActivity.MAIN_INTENT_NAME_BMI, 0.0)
+        displayInfo (bmi)
     }
 
     //display and make useful back arrow

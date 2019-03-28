@@ -1,11 +1,13 @@
-package com.example.bmi
+package com.example.bmi.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.MenuItem
+import com.example.bmi.R
 import com.example.bmi.history.HistoryAdapter
+import com.example.bmi.history.SharedPrefs
 import kotlinx.android.synthetic.main.activity_history.*
 
 class HistoryActivity : AppCompatActivity() {

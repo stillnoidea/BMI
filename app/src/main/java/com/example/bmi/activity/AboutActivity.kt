@@ -1,10 +1,11 @@
-package com.example.bmi
+package com.example.bmi.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import com.example.bmi.R
 import kotlinx.android.synthetic.main.activity_about.*
 
 
