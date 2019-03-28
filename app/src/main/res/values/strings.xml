@@ -10,9 +10,9 @@
     <string name="main_text_result_bmi">Your BMI :</string>
     <string name="main_text_input_height">Input your height</string>
     <string name="main_text_input_weight">Input your weight</string>
-    <string name="main_text_weight_first_unit">weight [kg] :</string>
+    <string name="main_text_weight_first_unit">Weight [kg] :</string>
     <string name="main_text_height_first_unit">Height [cm] :</string>
-    <string name="main_text_weight_second_unit">weight [lb]:</string>
+    <string name="main_text_weight_second_unit">Weight [lb]:</string>
     <string name="main_text_height_second_unit">Height [in]:</string>
     <string name="main_toolbar_option_switch_units">Imperial units</string>
     <string name="main_toolbar_option_about">About</string>
