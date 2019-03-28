@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#008547</color>
     <color name="colorPrimaryDark">#00572E</color>
-    <color name="colorAccent">#B8B8B8</color>
+    <color name="colorAccent">#7A7A7A</color>
 
     <!--bmi norm colors-->
     <color name="st_tropaz">#26619c</color> <!--starvation-->
