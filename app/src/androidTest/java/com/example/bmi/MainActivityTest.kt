@@ -23,8 +23,8 @@ class MainActivityTest {
 
     @Test
     fun mainActivityTestCountBmi() {
-        val inputweight = onView(withId(R.id.main_text_weight_input))
-        inputweight.perform(scrollTo(), replaceText("56"), closeSoftKeyboard())
+        val inputWeight = onView(withId(R.id.main_text_weight_input))
+        inputWeight.perform(scrollTo(), replaceText("56"), closeSoftKeyboard())
 
         val inputHeight = onView(withId(R.id.main_text_height_input))
         inputHeight.perform(scrollTo(), replaceText("160"), closeSoftKeyboard())
@@ -47,6 +47,8 @@ class MainActivityTest {
         val countButton = onView(withId(R.id.main_button_count_bmi))
         countButton.check(matches(withEffectiveVisibility(Visibility.VISIBLE)))
     }
+
+
 
 
 

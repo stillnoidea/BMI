@@ -52,7 +52,7 @@
     <string name="norm_info_text_above_bmi">Your BMI:</string>
 
     <!--history activity-->
-    <string name="history_weight">weight:</string>
+    <string name="history_weight">Weight:</string>
     <string name="history_text_height">Height:</string>
     <string name="history_text_bmi">Bmi:</string>
     <string name="history_text_date">Date:</string>

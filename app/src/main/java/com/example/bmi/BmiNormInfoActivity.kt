@@ -14,7 +14,7 @@ class BmiNormInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_bmi_norm_info)
         setSupportActionBar(norm_info_toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val bmi = intent.getDoubleExtra(getString(R.string.main_intent_name_bmi), 0.0)
+        val bmi = intent.getDoubleExtra(NORM_INTENT_NAME_NORM, 0.0)
         displayInfo(bmi)
     }
 
@@ -48,5 +48,7 @@ class BmiNormInfoActivity : AppCompatActivity() {
         norm_info_text_bmi_value.setTextColor(ContextCompat.getColor(this, result.color))
     }
 
-
+    companion object {
+        const val NORM_INTENT_NAME_NORM = "bmi_norm"
+    }
 }

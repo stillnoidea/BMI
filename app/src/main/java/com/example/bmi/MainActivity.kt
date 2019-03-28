@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     private var switchedUnitsForLbIn = false
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.action_switch_unit -> {
                 //switch to imperial units if option in toolbar is not checked, else switch to si units
-                if (switchedUnitsForLbIn) {
+                if (!switchedUnitsForLbIn) {
                     switchedUnitsForLbIn = true
                     item.isChecked = switchedUnitsForLbIn
                     switchToLbIn()
@@ -61,56 +62,56 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle?) {
         //saving all needed values, so after rotation could be restored
         super.onSaveInstanceState(outState)
-        Log.i(getString(R.string.main_save_log_tag), getString(R.string.main_save_log_message))
+        Log.i(MAIN_SAVE_LOG_TAG, MAIN_SAVE_LOG_MESSAGE)
 
         val bmi = main_text_result_bmi.text
-        outState?.putCharSequence(getString(R.string.main_save_key_bmi), bmi)
+        outState?.putCharSequence(MAIN_SAVE_KEY_BMI, bmi)
 
         val color = main_text_result_bmi.currentTextColor
-        outState?.putInt(getString(R.string.main_save_key_bmi_color), color)
+        outState?.putInt(MAIN_SAVE_KEY_BMI_COLOR, color)
 
         val bmiNorm = main_text_bmi_norm.text
-        outState?.putCharSequence(getString(R.string.main_save_key_norm), bmiNorm)
+        outState?.putCharSequence(MAIN_SAVE_KEY_NORM, bmiNorm)
 
         val colorNorm = main_text_bmi_norm.currentTextColor
-        outState?.putInt(getString(R.string.main_save_key_norm_color), colorNorm)
+        outState?.putInt(MAIN_SAVE_KEY_NORM_COLOR, colorNorm)
 
         val weightText = main_text_weight_label.text
-        outState?.putCharSequence(getString(R.string.main_save_key_weight_text), weightText)
+        outState?.putCharSequence(MAIN_SAVE_KEY_WEIGHT, weightText)
 
         val heightText = main_text_height_label.text
-        outState?.putCharSequence(getString(R.string.main_save_key_height_text), heightText)
+        outState?.putCharSequence(MAIN_SAVE_KEY_HEIGHT, heightText)
 
         val units = switchedUnitsForLbIn
-        outState?.putBoolean(getString(R.string.main_save_key_units), units)
+        outState?.putBoolean(MAIN_SAVE_KEY_UNITS, units)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         //restoring all values
         super.onRestoreInstanceState(savedInstanceState)
-        Log.i(getString(R.string.main_restore_log_tag), getString(R.string.main_restore_log_message))
+        Log.i(MAIN_RESTORE_LOG_TAG, MAIN_RESTORE_LOG_MESSAGE)
 
-        val bmi = savedInstanceState?.getCharSequence(getString(R.string.main_save_key_bmi))
+        val bmi = savedInstanceState?.getCharSequence(MAIN_SAVE_KEY_BMI)
         main_text_result_bmi.text = bmi
 
-        val bmiColor = savedInstanceState!!.getInt(getString(R.string.main_save_key_bmi_color))
+        val bmiColor = savedInstanceState!!.getInt(MAIN_SAVE_KEY_BMI_COLOR)
         main_text_result_bmi.setTextColor(bmiColor)
 
         main_button_bmi_norm.setColorFilter(bmiColor)
 
-        val bmiNorm = savedInstanceState.getCharSequence(getString(R.string.main_save_key_norm))
+        val bmiNorm = savedInstanceState.getCharSequence(MAIN_SAVE_KEY_NORM)
         main_text_bmi_norm.text = bmiNorm
 
-        val colorNorm = savedInstanceState.getInt(getString(R.string.main_save_key_norm_color))
+        val colorNorm = savedInstanceState.getInt(MAIN_SAVE_KEY_NORM_COLOR)
         main_text_bmi_norm.setTextColor(colorNorm)
 
-        val weightText = savedInstanceState.getCharSequence(getString(R.string.main_save_key_weight_text))
+        val weightText = savedInstanceState.getCharSequence(MAIN_SAVE_KEY_WEIGHT)
         main_text_weight_label.text = weightText
 
-        val heightText = savedInstanceState.getCharSequence(getString(R.string.main_save_key_height_text))
+        val heightText = savedInstanceState.getCharSequence(MAIN_SAVE_KEY_HEIGHT)
         main_text_height_label.text = heightText
 
-        switchedUnitsForLbIn = savedInstanceState.getBoolean(getString(R.string.main_save_key_units))
+        switchedUnitsForLbIn = savedInstanceState.getBoolean(MAIN_SAVE_KEY_UNITS)
         invalidateOptionsMenu()
 
     }
@@ -126,7 +127,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, BmiNormInfoActivity::class.java)
         val result = getBmiResult()
         if (result != 0.0) {
-            intent.putExtra(getString(R.string.main_intent_name_bmi), result)
+            intent.putExtra(MAIN_INTENT_NAME_BMI, result)
             startActivity(intent)
         }
     }
@@ -147,7 +148,7 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun getweight(): String {
+    private fun getWeight(): String {
         return main_text_weight_input.text.toString()
     }
 
@@ -158,11 +159,11 @@ class MainActivity : AppCompatActivity() {
     private fun countBmi() {
         //counting bmi, in imperial or si units, depending of checked option in toolbar, saving com.example.bmi.getResult in SharedPrefs,
         // first of all checking if all things are valid
-        val weight = getweight()
+        val weight = getWeight()
         val height = getHeight()
         val result: Double
 
-        if (isInput(weight, height)) {
+        if (isValidInput(weight, height)) {
             result = if (switchedUnitsForLbIn) {
                 BMIForLbIn(weight.toInt(), height.toInt()).countBmi()
             } else {
@@ -194,7 +195,7 @@ class MainActivity : AppCompatActivity() {
         main_text_bmi_norm.text = getString(R.string.string_empty)
     }
 
-    private fun isInput(weight: String, height: String): Boolean {
+    private fun isValidInput(weight: String, height: String): Boolean {
         //checking if there is any input, then if input is valid
         return if (height == getString(R.string.string_empty) || weight == getString(R.string.string_empty)) {
             showInvalidInputToast(getString(R.string.main_toast_text_no_weight_height))
@@ -210,12 +211,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun isValidLbIn(weight: Int, height: Int): Boolean {
         return when {
-            BMIForLbIn(weight, height).isInRangeHeight() -> {
-                showInvalidInputToast(getString(R.string.main_toast_text_invalid_height_input))
-                false
-            }
-            BMIForLbIn(weight, height).isInRangeWeight() -> {
+            !BMIForLbIn(weight, height).isInRangeWeight() -> {
                 showInvalidInputToast(getString(R.string.main_toast_text_invalid_weight_input))
+                false
+
+            }
+            !BMIForLbIn(weight, height).isInRangeHeight() -> {
+                showInvalidInputToast(getString(R.string.main_toast_text_invalid_height_input))
                 false
             }
             else -> true
@@ -224,12 +226,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun isValidKgCm(weight: Int, height: Int): Boolean {
         return when {
-            BMiForKgCm(weight, height).isInRangeHeight() -> {
-                showInvalidInputToast(getString(R.string.main_toast_text_invalid_height_input))
+            !BMiForKgCm(weight, height).isInRangeWeight() -> {
+                showInvalidInputToast(getString(R.string.main_toast_text_invalid_weight_input))
                 false
             }
-            BMiForKgCm(weight, height).isInRangeWeight() -> {
-                showInvalidInputToast(getString(R.string.main_toast_text_invalid_weight_input))
+            !BMiForKgCm(weight, height).isInRangeHeight() -> {
+                showInvalidInputToast(getString(R.string.main_toast_text_invalid_height_input))
                 false
             }
             else -> true
@@ -247,4 +249,18 @@ class MainActivity : AppCompatActivity() {
         return result.category.toString()
     }
 
+    companion object {
+        const val MAIN_SAVE_LOG_MESSAGE = "on save instance state"
+        const val MAIN_SAVE_LOG_TAG = "save"
+        const val MAIN_SAVE_KEY_BMI = "saved bmi"
+        const val MAIN_SAVE_KEY_BMI_COLOR = "saved color"
+        const val MAIN_SAVE_KEY_NORM = "saved bmi norm"
+        const val MAIN_SAVE_KEY_NORM_COLOR = "savedColorNorm"
+        const val MAIN_SAVE_KEY_WEIGHT = "saved weight text"
+        const val MAIN_SAVE_KEY_HEIGHT = "saved height text"
+        const val MAIN_SAVE_KEY_UNITS = "displayed units"
+        const val MAIN_RESTORE_LOG_TAG = "restore"
+        const val MAIN_RESTORE_LOG_MESSAGE = "on restore instance state"
+        const val MAIN_INTENT_NAME_BMI = "bmi_value"
+    }
 }
