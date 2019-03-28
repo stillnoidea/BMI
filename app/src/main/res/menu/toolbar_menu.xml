@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+            android:id="@+id/action_switch_unit"
+            android:title="@string/main_toolbar_option_switch_units" android:checkable="true" android:checked="false"
+            tools:checked="false"/>
+
+    <item
+            android:id="@+id/action_about"
+            android:title="@string/main_toolbar_option_about"
+            app:showAsAction="never"/>
+    <item
+            android:id="@+id/action_history"
+            android:title="@string/main_toolbar_option_history"
+            app:showAsAction="never"/>
+
+</menu>

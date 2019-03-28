@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+            android:background="@color/colorPrimaryDark"
+            android:theme="@style/ToolBarStyle"
+            app:popupTheme="@android:color/background_light"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/main_toolbar" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_height="@dimen/default_tool_bar_height"
+            app:titleTextColor="@android:color/background_light"
+            app:subtitleTextColor="@android:color/background_light" android:isScrollContainer="false"
+            app:layout_constraintHorizontal_bias="1.0" android:saveEnabled="true"
+            android:layout_width="@dimen/match_constraint"/>
+
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/match_constraint"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="@dimen/default_side_margin"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/default_side_margin"
+            android:layout_marginBottom="@dimen/default_margin_bottom"
+            app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/main_scroll_view_main"
+            android:layout_marginTop="@dimen/default_margin_top"
+            app:layout_constraintTop_toBottomOf="@+id/main_toolbar" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="1.0">
+        <android.support.constraint.ConstraintLayout
+                android:saveEnabled="true" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="@dimen/main_image_width"
+                    android:layout_height="@dimen/main_image_height" app:srcCompat="@drawable/rawr"
+                    android:id="@+id/main_image_primary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_side_margin" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/default_side_margin"
+                    app:layout_constraintHorizontal_bias="0.495"
+                    android:layout_marginTop="@dimen/default_margin_top" app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/default_content_description_image"/>
+            <TextView
+                    android:text="@string/main_text_weight_first_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/main_text_weight_label"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/default_side_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_side_margin"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    android:fontFamily="casual"
+                    android:textStyle="bold" android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="@dimen/default_margin_top"
+                    app:layout_constraintTop_toBottomOf="@+id/main_image_primary"/>
+            <EditText
+                    android:layout_width="@dimen/match_constraint"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/main_text_weight_input"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_side_margin"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/default_side_margin"
+                    android:hint="@string/main_text_input_weight"
+                    android:fontFamily="casual" android:textSize="@dimen/default_text_size"
+                    android:textAlignment="center"
+                    android:visibility="visible" android:textColor="@color/colorAccent"
+                    app:layout_constraintHorizontal_bias="0.511" android:layout_marginTop="@dimen/default_margin_top"
+                    app:layout_constraintTop_toBottomOf="@+id/main_text_weight_label"
+                    android:inputType="number" android:singleLine="true" android:autofillHints="" tools:targetApi="o"
+                    android:saveEnabled="true"
+                    android:maxLength="5"/>
+
+            <TextView
+                    android:text="@string/main_text_height_first_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/main_text_height_label" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_side_margin"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/default_side_margin"
+                    app:layout_constraintHorizontal_bias="0.0" android:fontFamily="casual" android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="@dimen/default_margin_top"
+                    app:layout_constraintTop_toBottomOf="@+id/main_text_weight_input"/>
+            <EditText
+                    android:layout_width="@dimen/match_constraint"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/main_text_height_input"
+                    android:hint="@string/main_text_input_height" android:textSize="@dimen/default_text_size"
+                    android:fontFamily="casual"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="@dimen/default_margin_top"
+                    app:layout_constraintTop_toBottomOf="@+id/main_text_height_label"
+                    android:layout_marginStart="@dimen/default_side_margin"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="@dimen/default_side_margin"
+                    app:layout_constraintEnd_toEndOf="parent" android:autofillHints="" tools:targetApi="o"
+                    android:saveEnabled="true"
+                    android:maxLength="3"/>
+            <TextView
+                    android:text="@string/main_text_result_bmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/main_text_your_bmi"
+                    android:fontFamily="casual" android:textColor="@color/colorPrimary" android:textStyle="bold"
+                    android:layout_marginTop="@dimen/default_margin_top"
+                    app:layout_constraintTop_toBottomOf="@+id/main_text_height_input"
+                    android:layout_marginEnd="@dimen/default_side_margin"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="@dimen/default_side_margin"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/main_text_result_bmi"
+                    android:textSize="@dimen/default_bmi_result_text_size"
+                    android:textAlignment="center" android:textStyle="bold" android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="casual"
+                    app:layout_constraintTop_toBottomOf="@+id/main_text_your_bmi"
+                    android:layout_marginEnd="@dimen/default_side_margin"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="@dimen/default_side_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:saveEnabled="true"/>
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_dialog_info"
+                    android:id="@+id/main_button_bmi_norm"
+                    app:layout_constraintStart_toEndOf="@+id/main_text_result_bmi"
+                    android:layout_marginStart="@dimen/default_side_margin"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/default_side_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/main_text_your_bmi"
+                    app:layout_constraintHorizontal_bias="0.744"
+                    android:layout_marginTop="@dimen/main_button_norm_info_top_margin"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/default_content_description_image"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/main_text_bmi_norm"
+                    app:layout_constraintTop_toBottomOf="@+id/main_text_result_bmi"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/default_side_margin" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/default_side_margin" android:fontFamily="casual"
+                    android:textSize="@dimen/default_bmi_norm_text_size"
+                    android:textAlignment="center" android:textStyle="bold" android:saveEnabled="true"
+                    app:layout_constraintBottom_toTopOf="@+id/main_button_count_bmi"
+                    android:layout_marginBottom="@dimen/default_margin_bottom"/>
+            <Button
+                    android:text="@string/main_button_count_text"
+                    android:layout_width="@dimen/match_constraint"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/main_button_count_bmi"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/default_side_margin"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="@dimen/default_side_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textColor="@android:color/background_light"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    android:layout_marginBottom="@dimen/default_margin_bottom"/>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

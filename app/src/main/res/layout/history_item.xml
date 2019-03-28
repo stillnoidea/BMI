@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:layout_width="match_parent"
+                                             android:orientation="horizontal" android:layout_height="wrap_content"
+                                             android:layout_marginEnd="@dimen/default_side_margin"
+                                             android:layout_marginStart="@dimen/default_side_margin" android:layout_marginBottom="@dimen/default_margin_bottom"
+                                             android:layout_marginTop="@dimen/history_margin_top">
+    <android.support.constraint.ConstraintLayout
+            android:layout_height="wrap_content"
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+                android:text="@string/history_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/history_text_weight"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="@dimen/default_side_margin" android:textSize="@dimen/default_history_text_size"
+                android:fontFamily="casual"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/history_text_weight_value"
+                app:layout_constraintStart_toEndOf="@+id/history_text_weight"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="@dimen/history_margin_between_text_and_value"
+                android:textSize="@dimen/default_history_text_size" android:fontFamily="casual"/>
+        <TextView
+                android:text="@string/history_text_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/history_text_height"
+                android:textSize="@dimen/default_history_text_size" android:fontFamily="casual"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/history_text_weight_value" android:layout_marginStart="@dimen/history_margin_between_texts"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/history_text_height_value"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/history_text_height"
+                android:textSize="@dimen/default_history_text_size" android:fontFamily="casual" android:layout_marginStart="@dimen/history_margin_between_text_and_value"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/default_side_margin"
+                app:layout_constraintHorizontal_bias="0.0"/>
+        <TextView
+                android:text="@string/history_text_bmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/hisotry_text_bmi"
+                android:textSize="@dimen/default_history_text_size" android:fontFamily="casual"
+                android:layout_marginTop="@dimen/default_margin_top"
+                app:layout_constraintTop_toBottomOf="@+id/history_text_weight" android:layout_marginStart="@dimen/default_side_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/history_text_bmi_value"
+                app:layout_constraintStart_toEndOf="@+id/hisotry_text_bmi"
+                android:layout_marginStart="@dimen/history_margin_between_text_and_value"
+                android:textSize="@dimen/default_history_text_size" android:fontFamily="casual" android:layout_marginTop="@dimen/default_margin_top"
+                app:layout_constraintTop_toBottomOf="@+id/history_text_weight_value"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+                android:text="@string/history_text_bmi_norm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hisotry_text_bmi_norm"
+                app:layout_constraintStart_toEndOf="@+id/history_text_bmi_value"
+                android:layout_marginStart="@dimen/history_margin_between_texts" android:textSize="@dimen/default_history_text_size" android:fontFamily="casual"
+                android:layout_marginTop="@dimen/default_margin_top" app:layout_constraintTop_toBottomOf="@+id/history_text_height"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/history_text_bmi_norm_value"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/default_side_margin" app:layout_constraintStart_toEndOf="@+id/hisotry_text_bmi_norm"
+                android:layout_marginStart="@dimen/history_margin_between_text_and_value" app:layout_constraintHorizontal_bias="0.0" android:textSize="@dimen/default_history_text_size"
+                android:fontFamily="casual" android:layout_marginTop="@dimen/default_margin_top"
+                app:layout_constraintTop_toBottomOf="@+id/history_text_height_value"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+    <TextView
+            android:text="@string/history_text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView10"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/default_side_margin"
+            android:textSize="@dimen/default_history_text_size" android:fontFamily="casual"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" android:layout_marginTop="@dimen/default_margin_top"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/history_text_date_value"
+            app:layout_constraintStart_toEndOf="@+id/textView10" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/default_side_margin" app:layout_constraintHorizontal_bias="0.0" android:layout_marginStart="@dimen/default_side_margin"
+            android:textSize="@dimen/default_history_text_size" android:fontFamily="casual"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" android:layout_marginTop="@dimen/default_margin_top"/>
+    <View
+            android:id="@+id/divider"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="@dimen/history_divider_height"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/default_side_margin" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/default_side_margin"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" android:layout_marginTop="@dimen/default_margin_top"
+            android:visibility="visible"/>
+
+</android.support.constraint.ConstraintLayout>

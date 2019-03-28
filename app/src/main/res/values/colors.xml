@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008547</color>
+    <color name="colorPrimaryDark">#00572E</color>
+    <color name="colorAccent">#B8B8B8</color>
+
+    <!--bmi norm colors-->
+    <color name="st_tropaz">#26619c</color> <!--starvation-->
+    <color name="persian_green">#00A693</color> <!--underweight-->
+    <color name="japanese_laurel">#00A200</color> <!--normal-->
+    <color name="indochine">#CE7301</color> <!--overweight-->
+    <color name="guardsman_red">#b80000</color> <!--obese-->
+
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="main_save_log_message">on save instance state</string>
+    <string name="main_save_log_tag">save</string>
+    <string name="main_save_key_bmi">saved bmi</string>
+    <string name="main_save_key_bmi_color">saved color</string>
+    <string name="main_save_key_norm">saved bmi norm</string>
+    <string name="main_save_key_norm_color">savedColorNorm</string>
+    <string name="main_save_key_weight_text">saved weight text</string>
+    <string name="main_save_key_height_text">saved height text</string>
+    <string name="main_save_key_units">displayed units</string>
+    <string name="main_restore_log_tag">restore</string>
+    <string name="main_restore_log_message">on restore instance state</string>
+
+
+    <string name="main_intent_name_bmi">bmi_value</string>
+    <string name="main_intent_name_norm">bmi_norm</string>
+</resources>

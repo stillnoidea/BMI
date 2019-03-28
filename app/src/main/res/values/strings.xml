@@ -1,0 +1,63 @@
+<resources>
+    <!--default-->
+    <string name="app_name">BMI</string>
+    <string name="double_zero">0.0</string>
+    <string name="string_empty">""</string>
+    <string name="default_content_description_image">There should be image</string>
+
+    <!--main activity-->
+    <string name="main_button_count_text">Count</string>
+    <string name="main_text_result_bmi">Your BMI :</string>
+    <string name="main_text_input_height">Input your height</string>
+    <string name="main_text_input_weight">Input your weight</string>
+    <string name="main_text_weight_first_unit">weight [kg] :</string>
+    <string name="main_text_height_first_unit">Height [cm] :</string>
+    <string name="main_text_weight_second_unit">weight [lb]:</string>
+    <string name="main_text_height_second_unit">Height [in]:</string>
+    <string name="main_toolbar_option_switch_units">Imperial units</string>
+    <string name="main_toolbar_option_about">About</string>
+    <string name="main_toolbar_option_history">History</string>
+    <string name="main_toast_text_no_weight_height">Enter values</string>
+    <string name="main_toast_text_invalid_height_input">Invalid height input</string>
+    <string name="main_toast_text_invalid_weight_input">Invalid weight input</string>
+    <string name="main_toast_text_no_bmi_result">First count bmi</string>
+
+    <!--about activity-->
+    <string name="about_text_about_info">This app was made by stack overflow society and a few more tutorials.</string>
+    <string name="about_button_toast_text">You played yourself</string>
+    <string name="about_title">Corporate work</string>
+
+    <!--norm info activity-->
+    <string name="norm_info_text_emaciation">Starvation is a severe deficiency in caloric energy intake, below the level
+        needed to maintain an organism\'s life. It is the most extreme form of malnutrition. In humans, prolonged
+        starvation can cause permanent organ damage and eventually, death. Starved people have a body weight index (BMI)
+        under 16.0. Starving patients can be treated, but this must be done cautiously to avoid refeeding syndrome.
+    </string>
+    <string name="norm_info_text_underweight">An underweight person is a person whose body weight is considered too low
+        to be healthy. Underweight people have a body weight index (BMI) of between 16.0 and 18.5 or a weight 15% to 20%
+        below that normal for their age and height group. Treatment options are diet, exercise, appetite stimulants.
+    </string>
+    <string name="norm_info_text_normal">Everything is okay, don\'t eat too much, keep healthy diet and do some
+        exercises
+    </string>
+    <string name="norm_info_text_overweight">Being overweight or fat is having more body fat than is optimally healthy.
+        Being overweight is especially common where food supplies are plentiful and lifestyles are sedentary. Overweight
+        people have a body weight index (BMI) between 25.0 and 30.0. Treatment diet and physical exercise.
+    </string>
+    <string name="norm_info_text_obese">Obesity is a medical condition in which excess body fat has accumulated to an
+        extent that it may have a negative effect on health.[1] People are generally considered obese when their body
+        weight index (BMI), a measurement obtained by dividing a person\'s weight by the square of the person\'s height,
+        is over 30. Treatment diet, physical exercise, bariatric surgery.
+    </string>
+    <string name="norm_info_text_above_bmi">Your BMI:</string>
+
+    <!--history activity-->
+    <string name="history_weight">weight:</string>
+    <string name="history_text_height">Height:</string>
+    <string name="history_text_bmi">Bmi:</string>
+    <string name="history_text_date">Date:</string>
+    <string name="history_text_bmi_norm">Norm:</string>
+    <string name="history_toolbar_title">History</string>
+
+
+</resources>
